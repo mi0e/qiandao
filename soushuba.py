@@ -74,6 +74,7 @@ class SouShuBaClient:
             "Content-Type": "application/x-www-form-urlencoded",
         }
         self.proxies = proxies
+        self.session.verify = False
 
     def login_form_hash(self):
         rst = self.session.get(f'https://{self.hostname}/member.php?mod=logging&action=login').text
