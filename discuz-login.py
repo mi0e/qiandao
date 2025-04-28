@@ -42,7 +42,7 @@ class DiscuzLogin:
             'answer': self.answer,
             'cookietime': 2592000
         }
-        login_rst = self.session.post(login_url, proxies=self.proxies, data=form_data)
+        login_rst = self.session.post(login_url, proxies=self.proxies, data=form_data, verify=False)
         if self.session.cookies.get('xxzo_2132_auth'):
             print(f'Welcome {self.username}!')
         else:
